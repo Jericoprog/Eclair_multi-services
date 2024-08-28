@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclair Multi-services</title>
     <style type="text/css" media="all">
+    body{
+        margin:0;
+    }
     .main{
         margin: 30px 10px;
     }
@@ -17,11 +20,11 @@
     }
         .txt{
             text-align: center;
-            width: 75%;
+            width: 70%;
             
         }
         .logo{
-            width: 23%;
+            width: 21%;
         }
         .logo img {
             background-color: skyblue;
@@ -63,16 +66,28 @@
      }
      .container{
          display: flex;
-                  flex-basis: 50%;
-         flex-wrap: wrap;
-     }
-     .col-1{
           flex-basis: 50%;
          flex-wrap: wrap;
+
+     }
+     .col-1{
+         flex-basis: 50%;
          align-items: center;
+         overflow: hidden;
      }
      .col-1 img{
          width: 100%;
+         transition: transform 0.3s ease;
+         cursor: pointer;
+     }
+     .image.agrandie{
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         z-index: 999;
      }
      .contact{
          background-color: #00ffff;
@@ -91,6 +106,23 @@
          background-color: skyblue;
      }
     </style>
+    
+    <script type="text/javascript" charset="utf-8">
+function agrandirImage(image) {
+    image.classList.toggle('agrandie'); // Ajoute ou retire la classe 'agrandie' au clic
+}
+
+// Écouteur d'événements pour détecter la touche "Échap"
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') { // Vérifie si la touche pressée est "Échap"
+        const image = document.querySelector('.image.agrandie'); // Sélectionne l'image agrandie
+        if (image) {
+            image.classList.remove('agrandie'); // Retire la classe 'agrandie' si elle est présente
+        }
+    }
+});
+
+    </script>
 </head>
 <body>
     <header class="en-tête">
@@ -131,16 +163,16 @@
 </ul><br />
 <div class="container">
     <div class="col-1">
-        <img src="https://i.ibb.co/XLQQWf7/produit1.jpg" alt="produit1" border="0">
+        <img src="https://i.ibb.co/XLQQWf7/produit1.jpg" alt="produit1" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/7SKyghT/produit4.jpg" alt="produit4" border="0">
+        <img src="https://i.ibb.co/7SKyghT/produit4.jpg" alt="produit4" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/dPPTrss/produit5.jpg" alt="produit5" border="0">
+        <img src="https://i.ibb.co/dPPTrss/produit5.jpg" alt="produit5" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/B3WyXct/produit6.jpg" alt="produit6" border="0">
+        <img src="https://i.ibb.co/B3WyXct/produit6.jpg" alt="produit6" border="0" class="image" onclick="agrandirImage(this)">
     </div>
 </div>
 <br />
@@ -149,16 +181,19 @@
 
 <div class="container">
     <div class="col-1">
-        <img src="https://i.ibb.co/Nx80WmV/produit2.jpg" alt="produit2" border="0">
+        <img src="https://i.ibb.co/Nx80WmV/produit2.jpg" alt="produit2" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/FmZq2Mm/produit3.jpg" alt="produit3" border="0">
+        <img src="https://i.ibb.co/FmZq2Mm/produit3.jpg" alt="produit3" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/z7Xmx48/produit8.jpg" alt="produit8" border="0">
+        <img src="https://i.ibb.co/z7Xmx48/produit8.jpg" alt="produit8" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     <div class="col-1">
-        <img src="https://i.ibb.co/bH1yLpy/produit7.jpg" alt="produit7" border="0">
+        <img src="https://i.ibb.co/bH1yLpy/produit7.jpg" alt="produit7" border="0" class="image" onclick="agrandirImage(this)">
+    </div>
+        <div class="col-1">
+        <img src="https://i.ibb.co/SNC4Gnj/diapo4.jpg" alt="produit9" border="0" class="image" onclick="agrandirImage(this)">
     </div>
     </div>
         </div>
